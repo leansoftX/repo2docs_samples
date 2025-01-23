@@ -27,6 +27,40 @@ AI聊天角色和模型管理系统涉及多个关键字段和数据结构，用
 
 整体设计旨在提供一个高效、安全且易于管理的AI解决方案，满足用户对AI聊天、写作、知识库、思维导图、音乐、绘画以及角色和模型管理的多样化需求。
 
+### API 列表
+
+| 模块 | 端点 | 方法 | 功能说明 |
+|------|------|------|----------|
+| AI聊天对话 | /ai/chat/conversation | POST | 创建新的聊天对话 |
+| AI聊天对话 | /ai/chat/conversation/{id} | PUT | 更新指定聊天对话 |
+| AI聊天对话 | /ai/chat/conversation/{id} | GET | 获取指定聊天对话详情 |
+| AI聊天对话 | /ai/chat/conversation/{id} | DELETE | 删除指定聊天对话 |
+| AI聊天对话 | /ai/chat/conversation/page | GET | 分页查询聊天对话记录 |
+| AI聊天对话 | /ai/chat/message | POST | 发送聊天消息 |
+| AI聊天对话 | /ai/chat/message/{id} | GET | 获取指定聊天消息 |
+| AI聊天对话 | /ai/chat/message/page | GET | 分页查询聊天消息记录 |
+| AI写作 | /ai/write/generate | POST | 生成AI写作内容 |
+| AI写作 | /ai/write/page | GET | 分页查询写作记录 |
+| AI知识库 | /ai/knowledge | POST | 创建新的知识库 |
+| AI知识库 | /ai/knowledge/{id} | PUT | 更新指定知识库 |
+| AI知识库 | /ai/knowledge/{id} | GET | 获取指定知识库详情 |
+| AI知识库 | /ai/knowledge/page | GET | 分页查询知识库记录 |
+| AI思维导图 | /ai/mindmap/generate | POST | 生成思维导图 |
+| AI思维导图 | /ai/mindmap/{id} | DELETE | 删除指定思维导图 |
+| AI思维导图 | /ai/mindmap/page | GET | 分页查询思维导图记录 |
+| AI音乐 | /ai/music/generate | POST | 生成AI音乐 |
+| AI音乐 | /ai/music/{id} | PUT | 更新指定音乐信息 |
+| AI音乐 | /ai/music/page | GET | 分页查询音乐记录 |
+| AI绘画 | /ai/image/draw | POST | 提交绘画请求 |
+| AI绘画 | /ai/image/{id} | PUT | 更新指定绘画信息 |
+| AI绘画 | /ai/image/page | GET | 分页查询绘画记录 |
+| AI模型管理 | /ai/model | POST | 创建新的AI模型 |
+| AI模型管理 | /ai/model/{id} | PUT | 更新指定AI模型 |
+| AI模型管理 | /ai/model/page | GET | 分页查询AI模型记录 |
+| API密钥管理 | /ai/apikey | POST | 创建新的API密钥 |
+| API密钥管理 | /ai/apikey/{id} | PUT | 更新指定API密钥 |
+| API密钥管理 | /ai/apikey/page | GET | 分页查询API密钥记录 |
+
 
 ### 包内部结构视图
 
@@ -131,5 +165,3 @@ graph TD
 | [admin](admin/_package.md) | folder | 该代码实现了一个管理后台的AI聊天对话控制器，支持创建、更新、获取和删除用户聊天对话，并通过REST API提供服务，确保权限验证和数据安全。控制器支持分页查询和删除对话记录，涉及的数据会进行格式转换。系统通过角色编号和知识库编号标识对话角色及其关联知识库，确保对话相关性和准确性。响应VO包含对话编号、用户编号、对话标题、角色设定等详细信息。更新请求允许用户灵活配置对话。分页请求VO包含用户编号、对话标题和创建时间范围，确保查询结果精确。消息管理支持发送、获取、删除和分页查询消息，确保消息的完整性和可追溯性。整体设计旨在提供高效、安全且易于管理的AI聊天对话解决方案。 |
 | [package-info.java](package-info.md) | file | 请提供需要处理的总结描述内容，以便我为您生成不超过100字的概要说明。 |
 | [app](app/_package.md) | folder | 请提供需要总结的具体信息内容，以便我为您生成符合要求的概要说明。 |
-
-
